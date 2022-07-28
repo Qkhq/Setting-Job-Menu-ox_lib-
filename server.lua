@@ -7,6 +7,7 @@ function Wipe()
         if not result or #result <= 0 then return end
         for i=1, #Config.RemoveItems, 1 do
             local data = result[i].inventory
+            if result[i].identifier == Config.BypassedIdentifiers[i] then return end
             if data[i].name == Config.RemoveItems[i] then
                 local dataVerify = data
                 table.remove(i, dataVerify)
