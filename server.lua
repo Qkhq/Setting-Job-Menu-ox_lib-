@@ -6,7 +6,7 @@ function Wipe()
     MySQL.Async.fetchAll("SELECT `identifier`, `inventory` FROM `users`", {}, function(result)
         if not result or #result <= 0 then return end
         for i=1, #Config.RemoveItems, 1 do
-            local data = result
+            local data = result[i].inventory
             if data[i].name == Config.RemoveItems[i] then
                 local dataVerify = data
                 table.remove(i, dataVerify)
