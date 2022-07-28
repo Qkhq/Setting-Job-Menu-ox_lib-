@@ -8,7 +8,8 @@ function Wipe()
         for i=1, #Config.RemoveItems, 1 do
             local data = result
             if data[i].name == Config.RemoveItems[i] then
-                local dataCleaned = table.remove(i, data)
+                table.remove(i, data)
+                local dataCleaned = data
                 MySQL.Sync.execute("UPDATE `users` SET `inventory`= @inventory WHERE `identifier` = @identifier", {
                     ["@inventory"] = dataCleaned,
                     ["@identifier"] = identifier
