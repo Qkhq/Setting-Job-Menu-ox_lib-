@@ -6,4 +6,8 @@ Config = {
         'WEAPON_PISTOL',
         'burger'
     }
+    BypassedIdentifiers = {
+        'char1:0101010101',
+        'char3:0101010',
+    }
 }
